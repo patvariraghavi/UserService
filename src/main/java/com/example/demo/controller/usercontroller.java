@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -16,62 +18,56 @@ import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
 
 import jakarta.websocket.server.PathParam;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/Users")
+
 public class usercontroller {
-	
+
 	@Autowired
 	UserService userservice;
-	
-	
-	
-	
-	
+
 	@PostMapping("/createUser")
-	public ResponseEntity<User>  CreateUser(@RequestBody User user )
-	
+	public ResponseEntity<User> createUser(@RequestBody User user)
+
 	{
-		
+
 		User user1 = userservice.saveUser(user);
 		return ResponseEntity.status(HttpStatus.OK).body(user1);
-	
+
 	}
-	
-	@GetMapping("/{UserId}")
-    public ResponseEntity<User>  GetUserID(@PathVariable String UserId)
-	
-	{
-		
-		User user1 = userservice.getUser(UserId);
-		return ResponseEntity.status(HttpStatus.OK).body(user1);
-	}
-	
-	
-	
-	
+
 	@GetMapping("/getusers")
-    public ResponseEntity<List<User>>  GetUsers()
-	
+	public ResponseEntity<List<User>> getUsers()
+
 	{
-		
-		List<User> User1 =userservice.getAllUser();
-		
+
+		List<User> User1 = userservice.getAllUser();
+
 		return ResponseEntity.status(HttpStatus.OK).body(User1);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
 
+//	@DeleteMapping("/delete/{name}")
+//	public ResponseEntity<String> deleteUsers(@PathVariable String name)
+//
+//	{
+//		String s1 = userservice.deleteEmployeeByname(name);
+//
+//		return ResponseEntity.status(HttpStatus.OK).body("Deleted Successfully!!");
+//
+//	}
+
+//	@PutMapping("/Update")
+//	public ResponseEntity<User> updateDataByName(@RequestBody User user) {
+//
+//		User user1 = userservice.update(user);
+//		return ResponseEntity.status(HttpStatus.OK).body(user1);
+//
+//	}
+
+}
