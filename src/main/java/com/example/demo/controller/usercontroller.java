@@ -52,15 +52,15 @@ public class usercontroller {
 		return ResponseEntity.status(HttpStatus.OK).body(User1);
 	}
 
-	@DeleteMapping("/delete/{name}")
-	public ResponseEntity<String> deleteUsers(@PathVariable String name)
-
-//	{
-//		String s1 = userservice.deleteEmployeeByname(name);
+//	@DeleteMapping("/delete/{name}")
+//	public ResponseEntity<String> deleteUsers(@PathVariable String name)
 //
-//		return ResponseEntity.status(HttpStatus.OK).body("Deleted Successfully!!");
-//
-//	}
+////	{
+////		String s1 = userservice.deleteEmployeeByname(name);
+////
+////		return ResponseEntity.status(HttpStatus.OK).body("Deleted Successfully!!");
+////
+////	}
 
 //	@PutMapping("/Update")
 //	public ResponseEntity<User> updateDataByName(@RequestBody User user) {
