@@ -52,9 +52,9 @@ public class usercontroller {
 		return ResponseEntity.status(HttpStatus.OK).body(User1);
 	}
 
-//	@DeleteMapping("/delete/{name}")
-//	public ResponseEntity<String> deleteUsers(@PathVariable String name)
-//
+	@DeleteMapping("/delete/{name}")
+	public ResponseEntity<String> deleteUsers(@PathVariable String name)
+
 //	{
 //		String s1 = userservice.deleteEmployeeByname(name);
 //
