@@ -1,44 +1,53 @@
 package com.example.demo.entity;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
+
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-
-
 
 
 @Entity
 @Table(name = "micro_user")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class User {
-	
-	
-	
 
 	@Id
 	@Column(name = "ID")
 	private String UserId;
-	
+
+	@Override
+	public String toString() {
+		return "User [UserId=" + UserId + ", name=" + name + ", email=" + email + ", about=" + about + "]";
+	}
+
 	@Column(name = "NAME")
-	private String name ;
-	
+	private String name;
+
 	@Column(name = "EMAIL")
 	private String email;
-	
+
+	public User(String userId, String name, String email, String about) {
+		super();
+		UserId = userId;
+		this.name = name;
+		this.email = email;
+		this.about = about;
+	}
+
+	public User() {
+		super();
+	}
+
 	@Column(name = "ABOUT")
 	private String about;
 
@@ -74,17 +83,4 @@ public class User {
 		this.about = about;
 	}
 
-
-
-	
-
-
-	
-	
-
-	
-	
-
-	
-	
 }
