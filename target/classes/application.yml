@@ -22,16 +22,6 @@ spring:
            active: default
               
            
-#eurekha:
-#   instance:
-#     prefer-Ip-Address: true
-#    
-#   client:
-#     fetch-registry: true 
-#     register-with-eurekha: true       
-#     service-url : 
-#       defaultZone: http://localhost:8761/eurekha
-#      
 
       
              
